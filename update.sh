@@ -1,7 +1,7 @@
 #!/bin/sh
-dpkg-scanpackages --multiversion rootful > Packages
+#dpkg-scanpackages --multiversion rootful > Packages
 dpkg-scanpackages --multiversion rootless >> Packages
-dpkg-scanpackages --multiversion roothide >> Packages
+#dpkg-scanpackages --multiversion roothide >> Packages
 
 cat Packages | xz > Packages.xz
 cat Packages | bzip2 > Packages.bz2
@@ -20,6 +20,6 @@ apt-ftparchive\
  -o APT::FTPArchive::Release::Description="FuYaoi个人插件源~"\
  release . > Release
 
-
-
-
+git add .
+git commit -m "update repo"
+git push --set-upstream origin main
